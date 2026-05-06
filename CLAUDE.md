@@ -92,7 +92,7 @@ import { SAFE, VIDEO } from "../theme";
 ### Captions
 
 - **Word-level SRT is strongly preferred.** The parser writes one `{ i, t, s, e }` entry per SRT cue, so word-level cues give you per-word timing for reveals like Airia's per-pill pop-ins. Phrase-level SRT still works, but `findPhrase` and per-word sync degrade to phrase-granular.
-- Word-level export is supported by: Descript, MacWhisper, and Whisper CLI (`--word_timestamps True`).
+- Word-level export options (free → paid): [Whisper](https://github.com/openai/whisper) open-source CLI (`--word_timestamps True`), MacWhisper (Mac GUI, one-time purchase), Descript (subscription, GUI).
 - The parsed `src/captions.json` is the source of truth. Each entry: `{ i, t, s, e }` (index, text, start sec, end sec).
 - For programmatic timing inside compositions: `findPhrase("the final score")` from `src/captions.ts`.
 - For one-off lookups ("when does he say X?"): just `Read`/`grep` the SRT file directly. Don't write a node script.

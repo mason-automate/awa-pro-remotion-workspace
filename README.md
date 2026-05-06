@@ -17,7 +17,13 @@ Works for **wide (YouTube)**, **vertical (TikTok / Reels / Shorts)**, and **squa
 
 - [Claude Code](https://claude.com/claude-code) (CLI, desktop app, or VS Code extension)
 - [Node.js](https://nodejs.org/) 20 or newer
-- A short-form video transcript as an `.srt` file — **with word-level timestamps** (one cue per word, not per phrase). This is what makes per-word reveals work — graphics that pop in exactly when the host says a specific word. Tools that export word-level SRT: **Descript** (in export options), **MacWhisper** (word-level toggle), or any **Whisper** CLI run with `--word_timestamps True`. Phrase-level SRT (Premiere/CapCut/YouTube auto-captions) still works but you only get rough beat-level timing.
+- A short-form video transcript as an `.srt` file. **Word-level timestamps strongly preferred** — one timestamp per word, not per sentence. This is what makes graphics pop in synced to specific spoken words. Phrase-level SRT (YouTube auto-captions, Premiere transcribe, CapCut) still works, you just lose per-word sync.
+
+  **How to get a word-level SRT, free → paid:**
+
+  - **[Whisper](https://github.com/openai/whisper)** (free, open-source) — runs locally on your machine. Once installed: `whisper your-audio.mp3 --word_timestamps True --output_format srt`. Requires the terminal and a one-time model download. Best price-to-quality if you're comfortable with the command line.
+  - **[MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper)** (Mac only, one-time purchase) — GUI wrapper around Whisper. Toggle word-level in export settings.
+  - **[Descript](https://www.descript.com/)** (subscription) — also a full video editor; word-level is a checkbox in SRT export.
 
 ## 60-second quickstart
 
