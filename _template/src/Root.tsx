@@ -3,10 +3,11 @@ import { Composition } from "remotion";
 import { VIDEO } from "./theme";
 
 /**
- * Each graphic is its own <Composition>. Render with:
+ * Each graphic is its own <Composition>. Render any of three ways:
  *
- *   npx remotion render <id> "out/<name>.mov" \
- *     --codec=prores --prores-profile=hq
+ *   1. Click the render button in Remotion Studio (browser, no terminal)
+ *   2. Ask Claude Code: "render Beat01-Intro for me"
+ *   3. CLI:  npx remotion render <id> "out/<name>.mp4" --codec=h264 --crf=18
  *
  * Composition IDs must match [a-zA-Z0-9-]+ (use hyphens, never underscores).
  */

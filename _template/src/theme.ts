@@ -2,11 +2,30 @@ import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
 
 const inter = loadInter();
 
-export const VIDEO = {
-  width: 3840,
-  height: 2160,
-  fps: 60,
+// === Aspect ratio ===
+// Pick one of: "wide" | "vertical" | "square".
+// The /new-remotion-project skill sets this at scaffold time. Flip manually if you want to change later.
+export const ASPECT: "wide" | "vertical" | "square" = "wide";
+
+const ASPECT_PRESETS = {
+  // 16:9 — YouTube / web. 4K renders downsample cleanly to 1080p.
+  wide: { width: 3840, height: 2160, fps: 60 },
+  // 9:16 — TikTok / Reels / Shorts.
+  vertical: { width: 1080, height: 1920, fps: 60 },
+  // 1:1 — Instagram feed.
+  square: { width: 1080, height: 1080, fps: 60 },
 } as const;
+
+// Keep critical text and graphics inside SAFE on every composition.
+// Vertical insets account for TikTok/Reels overlay UI (caption row top, share/like/comment column right, captions bottom).
+const SAFE_AREA_PRESETS = {
+  vertical: { x: 130, top: 220, bottom: 320 },
+  wide: { x: 120, top: 80, bottom: 80 },
+  square: { x: 80, top: 80, bottom: 80 },
+} as const;
+
+export const VIDEO = ASPECT_PRESETS[ASPECT];
+export const SAFE = SAFE_AREA_PRESETS[ASPECT];
 
 export const COLOR = {
   // Background
