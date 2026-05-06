@@ -1,0 +1,11 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Large source video files — too big for Git. Keep locally in public/.
+public/*.mp4
+public/*.mov
