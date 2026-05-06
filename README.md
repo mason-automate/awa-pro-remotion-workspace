@@ -51,6 +51,7 @@ When a beat looks right, **render it** — three options, pick whichever is frie
 1. **Click the render button** next to the composition in Remotion Studio (no terminal)
 2. **Ask Claude Code:** "render Beat01-Intro for me" — Claude runs the CLI for you
 3. **Run the CLI yourself:**
+
    ```bash
    npx remotion render Beat01-Intro "out/Beat01-Intro.mp4" --codec=h264 --crf=18
    ```

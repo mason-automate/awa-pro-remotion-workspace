@@ -54,7 +54,7 @@ These are the defaults that ship with this workspace. Override per-project if a 
 Pick one preset in `src/theme.ts` (`ASPECT` constant):
 
 | Preset | Dimensions | Use case |
-|---|---|---|
+| --- | --- | --- |
 | `wide` | 3840×2160 @ 60fps | YouTube / web (4K, downsamples cleanly to 1080p) |
 | `vertical` | 1080×1920 @ 60fps | TikTok / Reels / Shorts |
 | `square` | 1080×1080 @ 60fps | Instagram feed |
