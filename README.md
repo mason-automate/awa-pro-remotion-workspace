@@ -17,7 +17,7 @@ Works for **wide (YouTube)**, **vertical (TikTok / Reels / Shorts)**, and **squa
 
 - [Claude Code](https://claude.com/claude-code) (CLI, desktop app, or VS Code extension)
 - [Node.js](https://nodejs.org/) 20 or newer
-- A short-form video transcript as an `.srt` file (most transcription tools export this — Descript, MacWhisper, Riverside, Premiere's transcribe feature, etc.)
+- A short-form video transcript as an `.srt` file — **with word-level timestamps** (one cue per word, not per phrase). This is what makes per-word reveals work — graphics that pop in exactly when the host says a specific word. Tools that export word-level SRT: **Descript** (in export options), **MacWhisper** (word-level toggle), or any **Whisper** CLI run with `--word_timestamps True`. Phrase-level SRT (Premiere/CapCut/YouTube auto-captions) still works but you only get rough beat-level timing.
 
 ## 60-second quickstart
 
